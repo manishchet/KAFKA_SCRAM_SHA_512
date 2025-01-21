@@ -1,0 +1,28 @@
+------------ZOOKEEPER INSTALL STEPS------------
+1. Configure zoo.cfg file with necessary properties
+2. Configure the java.env file
+3. Configure the jaas.conf file
+4. Create myid file and zk-data directory
+5. Start the zkserver
+6. Connect to zkcli
+
+------------SYSTEMD service for zookeeper------------
+[Unit]
+Description=Zookeeper server
+After=network.target
+[Service]
+Type=forking
+User=zookeeper
+PIDFile=/data/zookeeper/zookeeper_server.pid
+Environment="JAVA_HOME=/opt/jdk-11.0.20/bin"
+ExecStart=/home/zookeeper/apache-zookeeper-3.7.1-bin/bin/zkServer.sh start
+ExecStop=/home/zookeeper/apache-zookeeper-3.7.1-bin/bin/zkServer.sh stop
+Restart=on-failure
+StandardOutput=append:/home/zookeeper/apache-zookeeper-3.7.1-bin/logs/zookeeper-zookeeper-server-.out
+StandardError=inherit
+[Install]
+WantedBy=multi-user.target
+
+
+
+

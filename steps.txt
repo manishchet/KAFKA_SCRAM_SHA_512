@@ -1,0 +1,17 @@
+**ZOOKEEPER installation**
+1. Configure zoo.cfg file with necessary properties
+2. Configure the java.env file
+3. Configure the jaas.conf file
+4. Create myid file and zk-data directory
+5. Start the zkserver
+6. Connect to zkcli
+
+**KAFKA installation**
+
+1. Configure the server.properties
+2. Configure the kafka jaas conf
+3. Configure the kafka logs directory
+4. Create the admin user with zk_tls.properties
+5. Configure the KAFKA_OPTS
+6. Start the kafka server
+7. Connect to Zkcli and check the broker id
